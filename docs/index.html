@@ -1,0 +1,37 @@
+<!--
+<a
+  href="javascript:Array.from(document.querySelectorAll('.unread')).filter(e=>e.querySelector('.type-icon-state-merged')||e.querySelector('.type-icon-state-closed')||e.classList.contains('security-alert-notification')).map(e=>e.querySelector('button[type=\'submit\'')).forEach(e=>e.click())"
+  >Mark as read merged / closed / security notifications on GitHub</a
+>
+-->
+
+<h2>GitHub</h2>
+
+<ul>
+    <li>
+        <a
+            href="javascript:[...document.querySelectorAll('.notifications-list-item')].filter(element =>!!element.querySelector('.octicon-git-pull-request.text-red, .octicon-git-merge')).map(el => el.querySelector('.notification-action-mark-archived button[type=\'submit\'')).forEach(el => el.click());"
+            >Mark as read merged / closed PRs notifications on GitHub</a
+        >
+    </li>
+
+    <li>
+        <a
+            href="javascript: (function () {    const left = `body[data-github-display-col='left']`;    const right = `body[data-github-display-col='right']`;      const getCol = n => `table.diff-table colgroup > col:nth-child(${n})`;      const getColumn = n => `table.diff-table tr[data-hunk] > td:nth-child(${n})`;      const styles = `    body[data-github-display-col] table.diff-table.file-diff-split {         table-layout: auto !important;    }        ${left} ${getCol(1)},    ${left} ${getCol(2)},    ${left} ${getColumn(1)},    ${left} ${getColumn(2)} {        display: none;    }      ${right} ${getCol(3)},    ${right} ${getCol(4)},    ${right} ${getColumn(3)},    ${right} ${getColumn(4)} {        display: none;    }    `;      const el = document.getElementById('ayc0-github-toggler');    if (!el) {      const style = document.createElement('style');      style.innerHTML = styles;      style.setAttribute('id', 'ayc0-github-toggler');      document.head.appendChild(style);    }    const current = document.body.dataset.githubDisplayCol;    if (current === undefined) {      document.body.dataset.githubDisplayCol = 'left';    } else if (current === 'left') {      document.body.dataset.githubDisplayCol = 'right';    } else {      delete document.body.dataset.githubDisplayCol;    }  })()"
+            >Toggle column in PRs in GitHub</a
+        >
+    </li>
+</ul>
+
+<hr />
+
+<h2>Twitter</h2>
+
+<ul>
+    <li>
+        <a
+            href="javascript:const hideAdd=()=>Array.from(document.querySelectorAll('article')).filter(e=>e.textContent.includes('Promoted')).forEach(e=>e.style='display: none');window.addEventListener('scroll',hideAdd);"
+            >Hide adds on Twitter</a
+        >
+    </li>
+</ul>
