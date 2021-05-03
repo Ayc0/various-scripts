@@ -2,7 +2,7 @@
     .filter(
         (element) =>
             !!element.querySelector(
-                '.octicon-git-pull-request.text-red, .octicon-git-merge'
+                '.octicon-git-pull-request.color-text-danger, .octicon-git-merge'
             )
     )
     .map((el) =>
